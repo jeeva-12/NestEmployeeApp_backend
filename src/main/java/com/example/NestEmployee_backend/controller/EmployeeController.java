@@ -1,7 +1,9 @@
 package com.example.NestEmployee_backend.controller;
 
 import com.example.NestEmployee_backend.dao.EmployeeDao;
+import com.example.NestEmployee_backend.dao.TaskDao;
 import com.example.NestEmployee_backend.model.Employee;
+import com.example.NestEmployee_backend.model.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +15,7 @@ import java.util.List;
 public class EmployeeController {
     @Autowired
     private EmployeeDao edao;
+
 
     @CrossOrigin(origins = "*")
     @PostMapping(path = "/addEmp",consumes ="application/json",produces = "application/json" )
@@ -48,6 +51,9 @@ public class EmployeeController {
     public List<Employee> EmployeeList(){
         return (List<Employee>) edao.findAll();
     }
+
+
+
 
 
 
